@@ -1,8 +1,4 @@
-# Project Synapse - Dryware Alpha 0
 # Orbits Systems
-#
-# Extended test: harder multi-step reasoning puzzles
-# where the gap between baseline and reasoning core should be larger
 
 import torch
 import torch.nn as nn
@@ -13,7 +9,7 @@ import time
 print("Project Synapse - Orbits Systems")
 print("="*50)
 
-SEED = 12
+SEED = 42
 torch.manual_seed(SEED)
 random.seed(SEED)
 
@@ -267,13 +263,6 @@ print(f"Baseline:        {b_acc*100:.1f}%")
 print(f"Reasoning core:  {c_acc*100:.1f}%")
 print(f"Improvement:     +{(c_acc-b_acc)*100:.1f}%")
 print()
-if c_acc > b_acc + 0.03:
-    print("HYPOTHESIS SUPPORTED")
-    print("Write the paper. Build Dryware Alpha 1.")
-elif c_acc > b_acc:
-    print("WEAKLY SUPPORTED")
-else:
-    print("NOT SUPPORTED YET")
 
 # Example trace on a hard puzzle
 print("\nHard puzzle example:")
